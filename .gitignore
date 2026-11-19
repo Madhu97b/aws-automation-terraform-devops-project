@@ -33,7 +33,6 @@ TwentyOnePlan_listeners_with_two_ports
 FinalPlan_of_our_project
 FinalPlan_of_our_project.txt
 
-
 # Local variable files
 terraform.tfvars
 *.auto.tfvars
