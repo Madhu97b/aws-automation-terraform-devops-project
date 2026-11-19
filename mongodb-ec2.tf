@@ -17,7 +17,7 @@ resource "aws_instance" "mongodb_instance" {
   instance_type = "t3.micro"
 
   //05.key pair
-  key_name = var.ec2_key_name
+  //key_name = var.ec2_key_name
 
   //06.Network settings 
   subnet_id = aws_subnet.private_subnet_1.id

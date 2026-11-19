@@ -6,9 +6,9 @@ variable "aws_region" {
 
 //Here in variable we need to use the type after the description not the value.
 
-variable "ec2_key_name" {
-  description = "The key name for the ec2 is"
-  type        = string
-}
+//variable "ec2_key_name" {
+//  description = "The key name for the ec2 is"
+//  type        = string
+//}
 
 
