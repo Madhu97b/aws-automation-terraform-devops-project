@@ -1,0 +1,96 @@
+Our revised 2-day Terraform plan
+Day 1 — Networking, security and IAM
+Infrastructure foundation
+
+Session	Work
+1	Terraform setup, provider, variables and outputs      ---> completed still needs to apply
+2	VPC and two subnets				      ---> completed still needs to apply
+3	Internet Gateway and route tables		      ---> completed still needs to apply	
+4	ALB and EC2 security groups			      ---> completed still needs to apply
+5	IAM role, policy attachment and instance profile      ---> completed still needs to apply 
+6	ECR repository					      ---> completed still needs to apply 
+
+
+Day 2 — Compute and load balancing
+Complete architecture
+
+Session	Work
+1	EC2 configuration for two instances
+2	Docker installation using user data
+3	ECR image pulling and container startup
+4	ALB configuration 				---> Done
+5	Target group and health checks			---> Done
+6	Listeners, outputs and final Terraform plan	---> Done
+7	Apply after approval and test deployment
+
+
+
+Inside the terraform official documentation, The meaning of the words listed below:-
+
+Remember this simple rule:-
+When reading Terraform Argument Reference:
+- Required = You must provide it.
+- Optional = You can provide it when needed.
+- One of the following must be supplied = Choose one suitable option.
+- Forces new = Changing it requires resource replacement.
+
+
+
+AmazonEC2ContainerRegistryReadOnly:- 
+arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+
+AmazonSSMManagedInstanceCore:-
+arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+
+
+We need to create the extra file which is required for the private subnet and 
+we use the private subnet for the mongodb container which we are going to place
+in seperate server which can be accessed only through the private ip.
+
+files which we need to create for the private subnet and mongodb container server :-
+
+00.mongodb-security-group.tf ---> Done
+01.private-subnets.tf        ---> Done
+02.private-route-tables.tf   ---> Done
+03.mongodb-ec2.tf	     ---> Done	
+04.mongodb-user-data.sh
+05.nat-gateway.tf            ---> Done
+06.mongodb-storage.tf	     ---> Done
+we will use the one vpc 2 public subnets and 1 private subnet.
+
+In the module 3 , day2 all the above 6 step we done.
+
+
+aws-terraform-project/
+│
+├── versions.tf
+├── provider.tf
+├── variables.tf
+├── terraform.tfvars
+├── outputs.tf
+│
+├── vpc.tf
+├── subnets.tf
+├── private-subnets.tf
+├── internet-gateway.tf
+├── route-tables.tf
+├── private-route-tables.tf
+├── nat-gateway.tf
+│
+├── security-groups.tf
+├── security-group-rules.tf
+├── mongodb-security-group.tf
+│
+├── iam.tf
+├── ecr.tf
+│
+├── ec2.tf
+├── mongodb-ec2.tf
+├── mongodb-storage.tf
+│
+├── user-data.sh
+├── mongodb-user-data.sh
+│
+├── alb.tf
+├── target-group.tf
+└── listeners.tf

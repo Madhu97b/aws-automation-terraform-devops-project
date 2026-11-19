@@ -1,0 +1,50 @@
+
+# Terraform working directory
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform plan files
+*.tfplan
+tfplan
+firstplan
+secondplan
+Thirdplan_subnets
+Fourthplan_IGW
+Fifthplan_RT_and_connecting_resources
+Sixthplan_SG_ALB_EC2
+Seventhplan_sg_alb_ec2_ingress_egress_rule
+Eighthplan_iamrole_policies_iam_instance_profile
+Ninthplan_ecr_output_file
+Tenthplan_datasource_EC2_outputs
+Eleventhplan_user_data_and_ec2_file_updation
+Twelthplan_mongodb_sg_referenced_sg_ec2
+Thirteenplan_private_subnet_mongodb
+Fourteenthplan_Elastic_ip_nat_gateway
+FifteenthPlan_private_rt_route_through_nat_subnet_association_with_private_subnet_and_private_rt
+SixteenthPlan_mongodb_ec2_instance_and_output_file_and_variables_terraform_tf_vars_file
+Seventeenthplan_ebs_volume_creation_and_attachment_and_edited_output_file
+Eighteenthplan_mongodb_user_data_updation_in_mongodb_ec2_file
+Nineteenplan_alb_creation
+Twenty_th_plan_alb_target_group_creation_and_instances_attachment
+TwentyOnePlan_listeners_with_two_ports
+FinalPlan_of_our_project
+FinalPlan_of_our_project.txt
+
+
+# Local variable files
+terraform.tfvars
+*.auto.tfvars
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
